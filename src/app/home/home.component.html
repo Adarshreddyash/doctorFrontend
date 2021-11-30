@@ -1,18 +1,26 @@
-<div>
+<div class="container">
   <div style="padding-top: 40px;">
-        <span *ngFor="let hero of totaldoctors; let i = index" style="padding: 200px;">
-          <mat-card style="max-width: 300px;">
-            <mat-card-title>{{hero.doctorName}}</mat-card-title>
-            <mat-card-subtitle>{{hero.doctorName}}</mat-card-subtitle>
-            <mat-card-subtitle>{{hero.email}}</mat-card-subtitle>
-            <p>{{hero.location}}</p>
-            <p>{{hero.speciality}}</p>
-            <p>{{hero.mobileNo}}</p>
-            <mat-card-actions>
-              <button mat-button>Book An Appointment</button>
-            </mat-card-actions>
-          </mat-card>
-          <br />
+    <h4 style="margin-top: 40px;">Get specific doctors</h4>
+    <mat-chip-list aria-label="Fish selection" >
+      <mat-chip style="margin-top: 20px;">Cardiologist</mat-chip>
+      <mat-chip style="margin-top: 20px;" color="accent" selected>Neurologist</mat-chip>
+    </mat-chip-list>
+
+    <h4 style="margin-top: 40px; ">Available Doctors:</h4>
+        <span *ngFor="let hero of totaldoctors; let i = index" style="padding: 20px; ">
+            <mat-card style="max-width: 300px;float: left; margin: 30px; padding: 30px;">
+              <mat-card-title>{{hero.doctorName}}</mat-card-title>
+              <mat-card-subtitle>{{hero.doctorName}}</mat-card-subtitle>
+              <mat-card-subtitle>{{hero.email}}</mat-card-subtitle>
+              <p>{{hero.location}}</p>
+              <p>{{hero.speciality}}</p>
+              <p>{{hero.mobileNo}}</p>
+              <mat-card-actions>
+                <a [routerLink]="['/appointment']" [queryParams]="{id: hero.doctorId}" queryParamsHandling="merge" mat-flat-button color="primary">Book Appointment</a>
+               
+              </mat-card-actions>
+            </mat-card>
      </span>
+   
     
 </div>
