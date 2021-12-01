@@ -37,7 +37,19 @@ export class AppointmentComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     } else {
-      this.http.post<any>('https://78a865b7-fa58-4dd4-9b0a-1a6bb9fb6674.mock.pstmn.io/post' , { doctorId: this.doctor , patientId: 2 , appointmentDate: this.data.date.value , appointmentStatus : "pending" , remark : this.data.remark.value}).subscribe(data => {
+      console.log(this.doctor)
+       console.log(this.data.patientid.value)
+       console.log(this.data.date.value)
+       console.log(this.data.remark.value)
+
+      
+      this.http.post<any>('http://localhost:8099/appointment/addappointment' , {  "doctorId": this.doctor,
+      "patientId": this.data.patientid.value,
+      "appointmentDate": this.data.date.value,
+      "appointmentStatus": "Pending",
+      "remark": this.data.remark.value}).subscribe(data => {
+        alert("Appointment Submitted for Approval")
+      //doctorId: this.doctor , patientId: 2 , appointmentDate: this.data.date.value , appointmentStatus : "pending" , remark : this.data.remark.value
       console.log(data)
   })
     }

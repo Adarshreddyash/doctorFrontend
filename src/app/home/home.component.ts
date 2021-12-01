@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get<any>('https://91d1aa6a-dae5-4f57-8895-1287ae5b5c6f.mock.pstmn.io/doctor/getalldoctors').subscribe(data => {
+    this.http.get<any>('http://localhost:8099/doctor/getalldoctors').subscribe(data => {
       this.totaldoctors = data;
       console.log(data);
       

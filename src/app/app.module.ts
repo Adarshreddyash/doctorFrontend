@@ -16,6 +16,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { AppointmentComponent } from './appointment/appointment.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
+import { AddAppointmentComponent } from './add-appointment/add-appointment.component';
+import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
+import { DoctorRegisterComponent } from './doctor-register/doctor-register.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import {MatChipsModule} from '@angular/material/chips';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    DoctorHomeComponent,
+    AddAppointmentComponent,
+    DoctorLoginComponent,
+    DoctorRegisterComponent
   ],
   imports: [
     BrowserModule,

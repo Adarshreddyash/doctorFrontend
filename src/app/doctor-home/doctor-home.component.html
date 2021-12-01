@@ -1,0 +1,24 @@
+<p>doctor-home works!</p>
+<div class="container">
+    <div style="padding-top: 40px;">
+      <h4 style="margin-top: 40px;">Get appointments</h4>
+     
+  
+      <h4 style="margin-top: 40px; ">Appointments:</h4>
+          <span *ngFor="let app of totalappointments; let i = index" style="padding: 20px; ">
+              <mat-card style="max-width: 300px;float: left; margin: 30px; padding: 30px;">
+                <mat-card-title>{{app.appointmentId}}</mat-card-title>
+                <mat-card-subtitle>{{app.patient}}</mat-card-subtitle>
+                <mat-card-subtitle>{{app.appointmentDate}}</mat-card-subtitle>
+               
+                <mat-card-actions>
+                  <a  [routerLink]="['/add-appointment']" [queryParams]="{id: app.appointmentId}" queryParamsHandling="merge" mat-flat-button color="primary" (onclick)="approve()" >Approve</a>
+                <!--  <a [routerLink]="['/deleteappointment']" [queryParams]="{id: app.appointmentId}" queryParamsHandling="merge" mat-flat-button color="primary">Cancel</a>
+-->
+                </mat-card-actions>
+              </mat-card>
+       </span>
+     
+      
+  </div>
+  
